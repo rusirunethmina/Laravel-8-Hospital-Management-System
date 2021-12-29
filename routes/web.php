@@ -13,9 +13,15 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index'])->name('home');
+
+Route::get('/logout',[HomeController::class,'logout'])->name('logout');
 
 Route::get('/home',[HomeController::class,'redirect']);
+Route::get('/about',[HomeController::class,'about'])->name('about');
+Route::get('/doctor',[HomeController::class,'doctor'])->name('doctor');
+Route::get('/contact',[HomeController::class,'contact'])->name('contact');
+Route::get('blog/details',[HomeController::class,'blogDetails'])->name('blog_deatils');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

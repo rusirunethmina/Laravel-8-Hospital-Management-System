@@ -20,7 +20,7 @@
             name="query"
             id="search-input"
             class="form-control"
-            placeholder="'button', 'chart' etc."
+            placeholder="Search"
             autofocus
             autocomplete="off"
           />
@@ -32,19 +32,6 @@
 
       <div class="navbar-right">
         <ul class="nav navbar-nav">
-          <!-- Github Link Button -->
-          <li class="github-link mr-3">
-            <a
-              class="btn btn-outline-secondary btn-sm"
-              href="https://github.com/tafcoder/sleek-dashboard"
-              target="_blank"
-            >
-              <span class="d-none d-md-inline-block mr-2"
-                >Source Code</span
-              >
-              <i class="mdi mdi-github-circle"></i>
-            </a>
-          </li>
           <li class="dropdown notifications-menu">
             <button class="dropdown-toggle" data-toggle="dropdown">
               <i class="mdi mdi-bell-outline"></i>
@@ -52,7 +39,7 @@
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-header">You have 5 notifications</li>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   <i class="mdi mdi-account-plus"></i> New user registered
                   <span class="font-size-12 d-inline-block float-right"
                     ><i class="mdi mdi-clock-outline"></i> 10 AM</span
@@ -105,18 +92,18 @@
               class="dropdown-toggle nav-link"
               data-toggle="dropdown"
             >
-              <img
-                src="{{ Auth::user()->profile_photo_url }}"
+              {{-- <img
+                src="/{{ Auth::user()->profile_photo_path }}"
                 class="user-image"
                 alt="User Image"
-              />
+              /> --}}
               <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right">
               <!-- User image -->
               <li class="dropdown-header">
                 <img
-                  src="{{ Auth::user()->profile_photo_url }}"
+                  src="{{ Auth::user()->profile_photo_path }}"
                   class="img-circle"
                   alt="User Image"
                 />
@@ -126,19 +113,19 @@
               </li>
 
               <li>
-                <a href="">
+                <a href="{{ route('profile.show') }}">
                   <i class="mdi mdi-account"></i> My Profile
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="{{ route('profile.show') }}">
                   <i class="mdi mdi-email"></i> Change Password
                 </a>
               </li>
               <li>
               </li>
               <li>
-                <a href="#">
+                <a href="{{ route('profile.show') }}">
                   <i class="mdi mdi-settings"></i> Account Setting
                 </a>
               </li>

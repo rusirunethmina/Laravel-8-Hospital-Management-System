@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Doctor;
 
 class HomeController extends Controller
 {
@@ -24,20 +25,27 @@ class HomeController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('home');
     }
 
     public function index()
     {
-        return view('user.home');
+        if (Auth::id()) {
+            return redirect('home');
+        } else {
+            return view('user.home');
+        }
     }
     public function about()
     {
-        return view('user.pages.about');
+
+        $doctor = Doctor::all();
+        return view('user.pages.about',compact('doctor'));
     }
     public function doctor()
     {
-        return view('user.pages.doctor');
+        $dataaa = Doctor::all();
+        return view('user.pages.doctor', compact('dataaa'));
     }
     public function contact()
     {

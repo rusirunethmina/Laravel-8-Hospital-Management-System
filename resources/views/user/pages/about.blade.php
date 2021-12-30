@@ -66,52 +66,23 @@
             <div class="col-lg-10 mt-5">
               <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
               <div class="row justify-content-center">
+                  @foreach ($doctor as $data)
                 <div class="col-md-6 col-lg-4 wow zoomIn">
                   <div class="card-doctor">
                     <div class="header">
-                      <img src="../assets/img/doctors/doctor_1.jpg" alt="">
+                      <img src="/images/doctor/{{ $data->image }}" alt="">
                       <div class="meta">
                         <a href="#"><span class="mai-call"></span></a>
                         <a href="#"><span class="mai-logo-whatsapp"></span></a>
                       </div>
                     </div>
                     <div class="body">
-                      <p class="text-xl mb-0">Dr. Stein Albert</p>
-                      <span class="text-sm text-grey">Cardiology</span>
+                      <p class="text-xl mb-0">Dr. {{ $data->name }}</p>
+                      <span class="text-sm text-grey">{{ $data->specialty }}</span>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow zoomIn">
-                  <div class="card-doctor">
-                    <div class="header">
-                      <img src="../assets/img/doctors/doctor_2.jpg" alt="">
-                      <div class="meta">
-                        <a href="#"><span class="mai-call"></span></a>
-                        <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                      </div>
-                    </div>
-                    <div class="body">
-                      <p class="text-xl mb-0">Dr. Alexa Melvin</p>
-                      <span class="text-sm text-grey">Dental</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow zoomIn">
-                  <div class="card-doctor">
-                    <div class="header">
-                      <img src="../assets/img/doctors/doctor_3.jpg" alt="">
-                      <div class="meta">
-                        <a href="#"><span class="mai-call"></span></a>
-                        <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                      </div>
-                    </div>
-                    <div class="body">
-                      <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
-                      <span class="text-sm text-grey">General Health</span>
-                    </div>
-                  </div>
-                </div>
-
+                @endforeach
               </div>
             </div>
           </div>

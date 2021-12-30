@@ -5,6 +5,8 @@
 
     <title>Sleek - Admin Dashboard</title>
 
+    <link href="https://ph-files.imgix.net/e4f20412-0e90-4479-a109-87a913f10da6.png?auto=format&auto=compress&codec=mozjpeg&cs=strip" rel="icon">
+
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500"
         rel="stylesheet" />
@@ -46,4 +48,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="{{ asset('backend/assets/plugins/nprogress/nprogress.js') }}"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"/>
 </head>

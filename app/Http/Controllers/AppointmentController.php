@@ -10,35 +10,41 @@ class AppointmentController extends Controller
 {
     public function appointment_add(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'date' => 'required',
-            'doctor' => 'required',
-            'phone' => 'required',
-            'message' => 'required',
-        ]);
-
-        $data = new Appointment();
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->date = $request->date;
-        $data->doctor = $request->doctor;
-        $data->number = $request->phone;
-        $data->message = $request->message;
-        $data->status = 'In progress';
         if (Auth::id()) {
-            $data->user_id = Auth::user()->id;
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required',
+                'date' => 'required',
+                'doctor' => 'required',
+                'phone' => 'required',
+                'message' => 'required',
+            ]);
+
+            $data = new Appointment();
+            $data->name = $request->name;
+            $data->email = $request->email;
+            $data->date = $request->date;
+            $data->doctor = $request->doctor;
+            $data->number = $request->phone;
+            $data->message = $request->message;
+            $data->status = 'In progress';
+            if (Auth::id()) {
+                $data->user_id = Auth::user()->id;
+            }
+
+            $data->save();
+
+            $alert = array(
+                'message' => 'Appointment Create Successfully!!',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->back()->with($alert);
         }
-
-        $data->save();
-
-        $alert = array(
-            'message' => 'Appointment Create Successfully!!',
-            'alert-type' => 'success'
-        );
-
-        return redirect()->back()->with($alert);
+        else
+        {
+            return redirect()->route('login');
+        }
     }
 
     public function appointment_user()

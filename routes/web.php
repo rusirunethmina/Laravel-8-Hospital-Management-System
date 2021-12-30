@@ -42,3 +42,7 @@ Route::get('appointment/cancle/{id}',[AppointmentController::class,'appointment_
 Route::get('admin/appointment/show',[AppointmentController::class,'appointment_show'])->name('show.appoin');
 Route::get('/approved/{id}',[AppointmentController::class,'approved']);
 Route::get('/cancle/{id}',[AppointmentController::class,'cancle']);
+
+Route::get('/emailview/{id}',[AdminController::class,'emailview']);
+
+Route::post('/send/email/{id}',[AdminController::class,'emailSend']);

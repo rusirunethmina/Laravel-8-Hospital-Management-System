@@ -2,7 +2,7 @@
     <div id="sidebar" class="sidebar sidebar-with-footer">
         <!-- Aplication Brand -->
         <div class="app-brand">
-            <a href="{{ route('home') }}" target="_blank">
+            <a href="{{ url('home') }}" target="_blank">
                 <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="30"
                     height="33" viewBox="0 0 30 33">
                     <g fill="none" fill-rule="evenodd">
@@ -25,34 +25,52 @@
                     </a>
                     <ul class="collapse show" id="home" data-parent="#sidebar-menu">
                         <div class="sub-menu">
-                            <li class="active">
-                                <a class="sidenav-item-link" href="">
+                            <li class="">
+                                <a class="sidenav-item-link" href="{{ route('home') }}">
                                     <span class="nav-text">Dashboard</span>
                                 </a>
                             </li>
-                            <li class="active">
+                            <li class="">
                                 <a class="sidenav-item-link" href="">
                                     <span class="nav-text">Slider Menu</span>
                                 </a>
                             </li>
-                            <li class="active">
+                            <li class="">
                                 <a class="sidenav-item-link" href="index.html">
                                     <span class="nav-text">Home About</span>
                                 </a>
                             </li>
-                            <li class="active">
+                            <li class="">
                                 <a class="sidenav-item-link" href="index.html">
                                     <span class="nav-text">Home Portfolio</span>
                                 </a>
                             </li>
-                            <li class="active">
+                            <li class="">
                                 <a class="sidenav-item-link" href="">
                                     <span class="nav-text">Home Brand</span>
                                 </a>
                             </li>
-                            <li class="active">
+                            <li class="">
                                 <a class="sidenav-item-link" href="{{ route('add.doctor_view') }}">
                                     <span class="nav-text">Add Doctor</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav sidebar-inner" id="sidebar-menu">
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#appo"
+                        aria-expanded="false" aria-controls="appo">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Appoinment</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse show" id="home" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="">
+                                <a class="sidenav-item-link" href="{{ route('show.appoin') }}">
+                                    <span class="nav-text">Appointment</span>
                                 </a>
                             </li>
                         </div>

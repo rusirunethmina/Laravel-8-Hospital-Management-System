@@ -53,10 +53,12 @@
               <a class="nav-link" href="{{ route('contact') }}">Contact</a>
             </li>
             @if (Route::has('login'))
-
             @auth
 
-            {{-- <h1>user is logged in!!</h1> --}}
+            <li class="nav-item">
+                <a class="btn btn-primary ml-lg-3" href="{{ route('user.appointment') }}">My Appointments</a>
+              </li>
+
             <x-app-layout>
 
             </x-app-layout>

@@ -7,3 +7,13 @@
 3. npm install
 
 4.npm run dev
+
+
+
+send email notificaton in laravel
+
+1. php artisan notifications:table     //create table
+
+2. php artisan migrate
+
+3. php artisan make:notification MyFirstNotification

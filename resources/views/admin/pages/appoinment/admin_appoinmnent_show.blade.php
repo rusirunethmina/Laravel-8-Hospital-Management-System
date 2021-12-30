@@ -8,7 +8,7 @@
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="col">Customer Name</th>
+                        <th scope="col">Name</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Doctor Name</th>
@@ -17,6 +17,7 @@
                         <th scope="col">Status</th>
                         <th scope="col">Approved</th>
                         <th scope="col">Cancle</th>
+                        <th scope="col">Send Mail</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,7 @@
                         <td>{{ $data->status }}</td>
                         <td><a href="{{ url('approved',$data->id) }}"><span class="badge badge-success">Approved</span></td></a>
                         <td><a href="{{ url('cancle',$data->id) }}"><span class="badge badge-danger">Cancle</span></td></a>
+                        <td><a href="{{ url('emailview',$data->id) }}"><span class="badge badge-info">Send Mail</span></td></a>
                     </tr>
                     @endforeach
                 </tbody>

@@ -7,3 +7,5 @@
 3.npm install
 
 4.npm run dev
+
+demo link : http://hospital.downturnup.lk/
